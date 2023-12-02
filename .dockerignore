@@ -1,0 +1,7 @@
+.git
+.pre-commit-config.yaml
+env
+Dockerfile
+README.md
+.gitignore
+.flake8
