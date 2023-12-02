@@ -1,33 +1,31 @@
-# Planets
-This is your encyclopedia to get familiar with different planets around us!
+# Personalization Settings
+This lets you personalize users settings through Flask REST APIs.
 
 ## Development setup
 
 Please follow the following steps in order to getting started with development.
 
 ```bash
-# Clone project
-git clone http://94.237.55.76:8888/git/techtest_journey.git
-cd techtest_journey/
 
-# IMPORTANT:
-# A heads up! the IP in the git repository link above (`94.237.55.76:8888`)
-# will be expired. So, please generate new link before cloning and use IP
-# from that link.
+# 1) Change your current directory to project root directory
+cd techtest/
 
-# Install dependencies into development environment
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
+# 2) Start development server which should be accessible at `localhost:5001` after the containers are up and running
+docker-compose up --build
 
-# Start development server
-bash start_server.sh
+# This doesn't come with any user information already added to the database, in order to test this – I have build the test cases that are covering all the API endpoints so please run those tests to observe how the APIs are behaving.
 
-# Run unit tests
-bash run_tests.sh
+# Run unit tests (pytests)
+docker compose exec web /bin/bash scripts/run_tests.sh
 
-# Install precommit hooks with flake8, isort, black so that the best
-# practices can be enforced on each commit you make.
-pre-commit install
-# Now, do some violation and try to commit ;)
+# SSH into the flask webapp container
+docker compose exec web /bin/bash
 ```
+
+## Contributing
+
+Install precommit hooks with flake8, isort, black so that the best practices can be enforced on each commit you make:
+```bash
+pre-commit install
+```
+Now, do some violation and try to commit ;)
