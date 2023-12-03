@@ -1,0 +1,16 @@
+
+Write a professional and engaging recruitment email from "Coinbase" to "Alfredo Lin", a "Software Engineer" at "Roblox" with specialties in Web3, Vue, Django.
+
+
+This candidate's bio is as follow:
+"Hi! I'm a bay area based software engineer with a love for the outdoors. Outside of work, I love snowboarding and skiing. You can catch me in my favorite local coffee shop, Coupa Cafe"
+
+
+The email should acknowledge his interests and how they align with the role of "Senior Software Engineer III" at "Coinbase"
+
+
+More about the Coinbase company:
+"Coinbase uses technology to push forward to future of web3 with cryptocurrencies, blockchain, and more."
+
+
+The tone should be friendly, personalized, and enthusiastic about the potential of "Alfredo Lin" joining the "Coinbase" team.
