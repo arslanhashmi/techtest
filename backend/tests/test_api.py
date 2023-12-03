@@ -41,7 +41,7 @@ class TestV1API:
 
         # Assert personalized settings information
         settings_data = user_data["personalization_settings"]
-        assert len(settings_data) == 4
+        assert len(settings_data) == 6
 
         settings = get_settings(PersonalizationSettingsType.LINKEDIN_BIO, settings_data)
         assert settings["value"]
@@ -54,10 +54,22 @@ class TestV1API:
         assert not settings["is_disabled"]
 
         settings = get_settings(
+            PersonalizationSettingsType.CURRENT_EXPERIENCE, settings_data
+        )
+        assert settings["value"]
+        assert not settings["is_disabled"]
+
+        settings = get_settings(
             PersonalizationSettingsType.LIST_OF_PAST_JOBS, settings_data
         )
         assert not settings["value"]
         assert not settings["is_disabled"]
+
+        settings = get_settings(
+            PersonalizationSettingsType.CURRENT_JOB_DESCRIPTION, settings_data
+        )
+        assert not settings["value"]
+        assert settings["is_disabled"]
 
         settings = get_settings(
             PersonalizationSettingsType.CURRENT_JOB_SPECIALTIES, settings_data

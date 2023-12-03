@@ -14,7 +14,6 @@ def client():
         yield client
 
 
-# (autouse=True, scope="session")
 @pytest.fixture
 def setup_data():
     with flask_app.app_context():
@@ -50,18 +49,35 @@ def setup_data():
         )
         db.session.add(exp_setting)
 
-        past_jobs_setting = PersonalizationSettings(
+        current_experience = PersonalizationSettings(
+            user=user,
+            name=PersonalizationSettingsType.CURRENT_EXPERIENCE,
+            description="Current Experience",
+            value=True,
+        )
+        db.session.add(current_experience)
+
+        past_jobs = PersonalizationSettings(
             user=user,
             name=PersonalizationSettingsType.LIST_OF_PAST_JOBS,
             description="List of Past Jobs",
             value=False,
         )
-        db.session.add(past_jobs_setting)
+        db.session.add(past_jobs)
+
+        current_job_description = PersonalizationSettings(
+            user=user,
+            name=PersonalizationSettingsType.CURRENT_JOB_DESCRIPTION,
+            description="Current Job Description",
+            value=False,
+            is_disabled=True,
+        )
+        db.session.add(current_job_description)
 
         past_jobs_setting = PersonalizationSettings(
             user=user,
             name=PersonalizationSettingsType.CURRENT_JOB_SPECIALTIES,
-            description="List of Past Jobs",
+            description="Current Job Specialties",
             value=False,
             is_disabled=True,
         )

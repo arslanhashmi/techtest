@@ -28,6 +28,7 @@ services:
       - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - ./db/dev-db-dump.sql:/docker-entrypoint-initdb.d/flask_dev_db.sql
     networks:
       - web_net
     container_name: techtask.postgres
