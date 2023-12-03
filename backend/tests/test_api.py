@@ -24,6 +24,7 @@ class TestV1API:
         assert user_data["first_name"] == "Muhammad"
         assert user_data["last_name"] == "Arslan"
         assert user_data["is_active"]
+        assert user.verify_password("123")
 
         # Assert personalized settings information
         personalization_settings = user_data["personalization_settings"]

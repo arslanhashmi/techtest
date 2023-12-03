@@ -1,4 +1,4 @@
-# Personalization Settings
+# Personalization
 This lets you personalize users settings through Flask REST APIs.
 
 ## Development setup
@@ -30,8 +30,9 @@ pre-commit install
 ```
 Now, do some violation and try to commit ;)
 
-## API Docs
+# API Docs
 
+## Retrieve Personalized Settings
 ```python
 GET localhost:5001/personalization_settings/<user_id>/
 

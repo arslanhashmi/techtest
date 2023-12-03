@@ -58,13 +58,17 @@ class User(db.Model):
         """
         Generate hash and set the password.
         """
-        self.password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt(rounds))
+        self.password = bcrypt.hashpw(
+            password.encode("utf8"), bcrypt.gensalt(rounds)
+        ).decode("utf8")
 
     def verify_password(self, password: str) -> bool:
         """
         Verify password.
         """
-        return self.password == bcrypt.hashpw(password, self.password)
+        return self.password.encode("utf8") == bcrypt.hashpw(
+            password.encode("utf8"), self.password.encode("utf8")
+        )
 
 
 class UserSchema(SQLAlchemySchema):
