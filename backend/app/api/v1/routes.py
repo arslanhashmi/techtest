@@ -1,3 +1,3 @@
-from .api import PersonalizedSettingsResource
+from .api import PersonalizationSettingsResource
 
-routes = [("/personalization_settings/<user_id>/", PersonalizedSettingsResource)]
+routes = [("/personalization_settings/<user_id>/", PersonalizationSettingsResource)]

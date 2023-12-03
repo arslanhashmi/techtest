@@ -14,8 +14,9 @@ def client():
         yield client
 
 
-@pytest.fixture(autouse=True, scope="session")
-def test_data_fixtures():
+# (autouse=True, scope="session")
+@pytest.fixture
+def setup_data():
     with flask_app.app_context():
         # DB cleanup before running a test.
         db.drop_all()
