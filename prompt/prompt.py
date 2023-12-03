@@ -20,5 +20,5 @@ The tone should be friendly, personalized, and enthusiastic about the potential 
 """
 
 # Write the prompt to a text file
-with open("prompt.txt", "w") as file:
+with open("./prompt/prompt.txt", "w") as file:
     file.write(prompt)
