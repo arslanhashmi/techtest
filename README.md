@@ -29,3 +29,47 @@ Install precommit hooks with flake8, isort, black so that the best practices can
 pre-commit install
 ```
 Now, do some violation and try to commit ;)
+
+## API Docs
+
+```python
+GET localhost:5001/personalization_settings/<user_id>/
+
+{
+  'id': 1,
+  'email': 'arslan@example.com',
+  'is_active': True,
+  'first_name': 'Muhammad',
+  'last_name': 'Arslan',
+  'personalization_settings': [
+    {
+      'id': 1,
+      'name': 'LINKEDIN_BIO',
+      'description': 'Enable LinkedIn Bio',
+      'value': True,
+      'is_disabled': False
+    },
+    {
+      'id': 2,
+      'name': 'TOTAL_EXPERIENCE',
+      'description': 'Year of Experience',
+      'value': True,
+      'is_disabled': False
+    },
+    {
+      'id': 3,
+      'name': 'LIST_OF_PAST_JOBS',
+      'description': 'List of Past Jobs',
+      'value': False,
+      'is_disabled': False
+    },
+    {
+      'id': 4,
+      'name': 'CURRENT_JOB_SPECIALTIES',
+      'description': 'List of Past Jobs',
+      'value': False,
+      'is_disabled': True
+    }
+  ]
+}
+```
